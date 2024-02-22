@@ -3,8 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let $menu = document.querySelector(".js-header-menu"),
         $headerBurger = document.querySelector(".js-header-burger");
 
+    //Открытие меню
     $headerBurger.addEventListener("click", function (e) {
-        e.preventDefault(); // Предотвращаем действие по умолчанию
+        e.preventDefault();
         this.classList.toggle("header__burger_active");
 
         if (this.classList.contains("header__burger_active")) {
