@@ -1,0 +1,120 @@
+$card_bg_color: #fff;
+$card_button_text_color: #fff;
+$card_button_hover_color: #c2ab81;
+$card_main_color: #171717;
+$card_second_color: #666666;
+.news {
+    padding: rem(134) 0 rem(256) 0;
+    &__title {
+        margin-bottom: rem(53);
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(rem(320), 1fr));
+        gap: rem(30);
+        margin-bottom: rem(60);
+    }
+    &__card {
+        display: flex;
+        flex-direction: column;
+        background: $card_bg_color;
+        &-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 auto;
+            padding: rem(25) rem(25) rem(30) rem(25);
+        }
+        &-img {
+            display: block;
+            width: 100%;
+            height: rem(185);
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &-title {
+            font-family: $second_font;
+            font-weight: $fw-700;
+            font-size: rem(14);
+            line-height: rem(18);
+            letter-spacing: rem(1.5);
+            margin-bottom: rem(20);
+            color: $card_main_color;
+            text-transform: $upper-text;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        &-descr {
+            font-size: rem(14);
+            line-height: rem(18);
+            margin-bottom: rem(20);
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            line-clamp: 4;
+            -webkit-box-orient: vertical;
+            color: $card_second_color;
+        }
+        &-preview {
+            font-size: rem(16);
+            line-height: rem(22);
+            margin-bottom: rem(20);
+            color: $card_main_color;
+        }
+        &-info {
+            font-size: rem(12);
+            line-height: rem(16);
+            margin-bottom: rem(25);
+            margin-top: auto;
+            color: $card_second_color;
+            span {
+                font-weight: $fw-700;
+            }
+        }
+        &-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: rem(16);
+            width: 100%;
+            font-family: $second_font;
+            font-weight: $fw-700;
+            font-size: rem(14);
+            line-height: normal;
+            color: $card_button_text_color;
+            background: $card_main_color;
+            transition:
+                background 350ms ease-in-out,
+                color 350ms ease-in-out;
+        }
+    }
+    &__more {
+        &-button {
+            display: flex;
+            margin: 0 auto;
+        }
+    }
+    @media (hover: hover) {
+        &__card {
+            &-button:hover {
+                background: $card_button_hover_color;
+            }
+        }
+    }
+    @media (max-width: 1024px) {
+        padding: 0 0 156px 0;
+        &__title {
+            margin-bottom: 40px;
+        }
+        &__grid {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@mixin font($fname, $fstyle, $fweight, $fdisplay, $furl1, $furl2, $furl3) {
+    @font-face {
+        font-family: $fname;
+        font-style: $fstyle;
+        font-weight: $fweight;
+        font-display: $fdisplay;
+        src:
+            url($furl3) format("ttf"),
+            url($furl2) format("woff2"),
+            url($furl1) format("woff");
+    }
+}
+@include font("Montserrat", normal, 400, swap, "../fonts/Montserrat-Regular.woff", "../fonts/Montserrat-Regular.woff2", "../fonts/Montserrat-Regular.ttf");
+@include font("Montserrat", normal, 700, swap, "../fonts/Montserrat-Bold.woff", "../fonts/Montserrat-Bold.woff2", "../fonts/Montserrat-Bold.ttf");
+@include font("Mulish", normal, 400, swap, "../fonts/Mulish-Regular.woff", "../fonts/Mulish-Regular.woff2", "../fonts/Mulish-Regular.ttf");
+@include font("Mulish", normal, 600, swap, "../fonts/Mulish-SemiBold.woff", "../fonts/Mulish-SemiBold.woff2", "../fonts/Mulish-SemiBold.ttf");
+@include font("Mulish", normal, 700, swap, "../fonts/Mulish-Bold.woff", "../fonts/Mulish-Bold.woff2", "../fonts/Mulish-Bold.ttf");

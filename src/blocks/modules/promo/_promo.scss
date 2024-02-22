@@ -1,0 +1,51 @@
+$descr_color: rgba(255, 255, 255, 0.79);
+$overlay_gradient: linear-gradient(to top, rgb(19, 19, 19), rgba(19, 19, 19, 0) 100%);
+.promo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: calc(100vh - 120px);
+    border-radius: rem(60) rem(60) 0 0;
+    background: url("/img/hero_promo.webp") center center/cover no-repeat;
+    &__overlay {
+        width: 100%;
+        padding: 0 0 rem(96) 0;
+        background: $overlay_gradient;
+    }
+    &__title,
+    &__descr {
+        max-width: rem(686);
+        margin-bottom: rem(40);
+    }
+    &__descr {
+        color: $descr_color;
+    }
+    &__button {
+        transform: skewX(-17deg) translateX(rem(10));
+    }
+    @media (max-width: 1024px) {
+        &__overlay {
+            width: 100%;
+            padding: 0 0 120px 0;
+            background: $overlay_gradient;
+        }
+    }
+    @media (max-width: 767px) {
+        background: url("/img/hero_promo_tablet.webp") center center/cover no-repeat;
+    }
+    @media (max-width: 500px) {
+        min-height: calc(100vh - 80px);
+        &__descr {
+            font-size: 14px;
+        }
+        &__title,
+        &__descr {
+            max-width: 268px;
+            margin-bottom: 20px;
+        }
+        &__button {
+            transform: skewX(-17deg) translateX(8px);
+        }
+    }
+}

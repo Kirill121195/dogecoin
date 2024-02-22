@@ -1,0 +1,136 @@
+html,
+body {
+    height: 100%;
+}
+html {
+    font-size: 16px;
+}
+body {
+    font-family: $main_font;
+    font-size: rem(16);
+    font-style: normal;
+    line-height: normal;
+    font-weight: $fw-400;
+    color: $default_text_color;
+    background: $main_bg_color;
+    scrollbar-width: thin;
+    scrollbar-color: #c2ab81 #666666;
+}
+body::-webkit-scrollbar {
+    width: 7px;
+}
+body::-webkit-scrollbar-track {
+    background: #666666;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #c2ab81;
+}
+*,
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+a {
+    display: block;
+    text-decoration: none;
+}
+button {
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+}
+.no-scroll {
+    overflow: hidden;
+}
+.wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    padding-top: rem(120);
+    @media (max-width: 500px) {
+        padding-top: 80px;
+    }
+}
+.container {
+    max-width: rem(1720);
+    width: 93.6%;
+    margin: 0 auto;
+    @media screen and (max-width: 1024px) {
+        padding: 0 15px 0 15px;
+        max-width: 100%;
+    }
+    @media screen and (max-width: 500px) {
+        width: 100%;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+.anchor {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    background: transparent;
+    transform: translateY(-30px);
+}
+.title {
+    font-size: rem(42);
+    line-height: normal;
+    text-transform: $upper-text;
+    @media (max-width: 500px) {
+        font-size: 20px;
+    }
+}
+
+.overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+    &_shown {
+        visibility: visible;
+        opacity: 1;
+    }
+}

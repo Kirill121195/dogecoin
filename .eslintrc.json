@@ -1,0 +1,26 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+
+    "extends": "eslint:recommended",
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+
+    "rules": {
+        "indent": ["error", "tab"],
+        "linebreak-style": "off",
+        "quotes": "off",
+        "semi": "off",
+        "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+        "no-unused-expressions": "error",
+        "no-console": "off",
+        "arrow-parens": ["error", "as-needed"]
+    }
+}

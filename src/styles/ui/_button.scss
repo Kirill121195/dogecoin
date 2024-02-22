@@ -1,0 +1,88 @@
+$button_bg_color: #c2ab81;
+$button_bg_light_color: #fff;
+$button_text_color: #fff;
+$button_hover_text_color: #131313;
+$button_spinner_color_first: #c2ab81;
+$button_spinner_color_second: #171717;
+
+// Анимация вращения спиннера
+@keyframes button-spinner-rotation {
+    0% {
+        transform: skewX(0deg) rotate(0deg);
+    }
+    100% {
+        transform: skewX(0deg) rotate(360deg);
+    }
+}
+
+.button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(21) rem(62);
+    background: $button_bg_color;
+    color: $button_text_color;
+    transform: skewX(-17deg);
+    transition:
+        color 350ms ease-in-out,
+        background 350ms ease-in-out;
+    span {
+        font-weight: $fw-700;
+        font-size: rem(12);
+        line-height: 150%;
+        text-transform: $upper-text;
+        transform: skewX(17deg);
+    }
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: "";
+        display: block;
+        width: rem(6);
+        height: 100%;
+        background: $button_bg_light_color;
+        transform: translateX(0.75rem);
+        transition:
+            width 350ms ease-in-out,
+            transform 350ms ease-in-out;
+        z-index: -1;
+    }
+    &__spinner {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        &-inner {
+            border: rem(3) solid $button_spinner_color_first;
+            border-top: rem(3) solid $button_spinner_color_second;
+            border-radius: 50%;
+            width: rem(35);
+            height: rem(35);
+            animation: button-spinner-rotation 2s linear infinite;
+        }
+    }
+    @media (hover: hover) {
+        &:hover {
+            background: transparent;
+            color: $button_hover_text_color;
+            &::after {
+                width: 100%;
+                height: 100%;
+                transform: translateX(0);
+            }
+        }
+    }
+    @media (max-width: 500px) {
+        padding: rem(14) rem(42);
+    }
+}

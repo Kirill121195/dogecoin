@@ -1,0 +1,28 @@
+@use "sass:math";
+
+@function rem($value) {
+    $remValue: math.div($value, 16) + rem;
+    @return $remValue;
+}
+//функция предназначена для удаления единицы измерения
+@function strip-unit($number) {
+    @if type-of($number) == "number" and not unitless($number) {
+        @return math.div($number, ($number * 0 + 1));
+    }
+
+    @return $number;
+}
+//функция предназначена для адаптивного шрифта
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+    $f-min: strip-unit($f-min);
+    $f-max: strip-unit($f-max);
+    $w-min: strip-unit($w-min);
+    $w-max: strip-unit($w-max);
+
+    $k: math.div(($f-max - $f-min), ($w-max - $w-min));
+    $b: $f-min - $k * $w-min;
+
+    $b: $b + $units;
+
+    @return calc(#{$k} * 100vw + #{$b});
+}

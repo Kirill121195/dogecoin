@@ -1,0 +1,38 @@
+header.header
+	.container
+		button.header__burger.js-header-burger(aria-label="Открыть меню", aria-expanded="false")
+			span.header__burger-line
+			span.header__burger-line
+			span.header__burger-line
+		a.header__logo(href="/")
+			img(src="/img/svg/magwai_logo.svg", title="Magwai", alt="Magwai")
+		nav.header__nav
+			a.header__nav-link(href="#") Услуги
+			a.header__nav-link(href="#") Абонименты
+			a.header__nav-link(href="#") Почему мы
+			a.header__nav-link(href="#") Оборудование
+			a.header__nav-link(href="#") Акции
+			a.header__nav-link(href="#") FAQ
+			a.header__nav-link(href="#") Контакты
+		.header__contacts
+			a.header__contacts-tel(href="tel:+79272223244")
+				svg.header__logo
+					use(xlink:href="img/sprites/sprite.svg#phone_icon")
+			a.header__contacts-feedback.button(href="#")
+				span Оставить заявку
+	.header__menu.js-header-menu
+		.container
+			nav.header__nav
+				a.header__nav-link(href="#") Услуги
+				a.header__nav-link(href="#") Абонименты
+				a.header__nav-link(href="#") Почему мы
+				a.header__nav-link(href="#") Оборудование
+				a.header__nav-link(href="#") Акции
+				a.header__nav-link(href="#") FAQ
+				a.header__nav-link(href="#") Контакты
+			.header__contacts
+				a.header__contacts-tel(href="tel:+79272223244")
+					svg.header__logo
+						use(xlink:href="img/sprites/sprite.svg#phone_icon")
+				a.header__contacts-feedback.button(href="#")
+					span Оставить заявку
